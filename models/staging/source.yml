@@ -1,0 +1,86 @@
+version: 2
+
+sources:
+  - name: erp
+    schema: source_adventureworks
+    description: Fonte de vendas e pessoas da Adventure Works
+    tables:
+      - name: address
+        description: tabela com endereço do cliente.
+        columns:
+          - name: addressid
+            descrition: Chave primária da tabela de endereço.
+            tests:
+              - unique
+              - not_null
+
+      - name: countryregion
+        description: tabela de países. 
+       
+      - name: creditcard
+        description: tabela com os dados dos cartões de crédito dos clientes.
+        columns:
+          - name: creditcardid
+            descrition: Chave primária da tabela de cartões de crédito.
+            tests:
+              - unique
+              - not_null
+
+      - name: customer
+        description: tabela com os dados dos clientes.
+        columns:
+          - name: customerid
+            descrition: Chave primária da tabela de clientes.
+            tests:
+              - unique
+              - not_null
+
+      - name: person
+        description: tabela com os dados das pessoas.
+      
+      - name: product
+        description: tabela com os dados dos clientes.
+        columns:
+          - name: productid
+            descrition: Chave primária da tabela produtos.
+            tests:
+              - unique
+              - not_null
+
+      - name: salesorderdetail
+        description: Detalhe de item linha para cada pedido da tabela ordens.
+        columns:
+          - name: salesorderid
+            descrition: Chave estrageira da tabela orderdetail.
+            tests:
+              - unique
+              - not_null
+              
+      - name: salesorderheader
+        description: Detalhe de item linha para cada pedido da tabela ordens.
+        columns:
+          - name: salesorderid
+            descrition: Chave primária da tabela de ordens.
+            tests:
+              - unique
+              - not_null
+
+      - name: salesorderheadersalesreason
+        description: Cabeçalho do pedido do motivo de vendas.
+
+      - name: salesreason
+        description: Tipo de razão.
+
+      - name: stateprovince
+        description: Província do Estado.
+
+      - name: store
+        description: Tabela com os detalhes das lojas.
+        columns:
+          - name: businessentityid
+            descrition: Chave estrageira da tabela de store.
+            tests:
+              - unique
+              - not_null
+
+

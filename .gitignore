@@ -1,0 +1,7 @@
+
+target/
+dbt_packages/
+logs/
+/desafio-adventureworks-28686ef503e1.json
+/logs/
+/venv/
