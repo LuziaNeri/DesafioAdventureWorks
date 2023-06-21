@@ -1,6 +1,6 @@
 with source_store as (
     select
-        cast(businessentityid as int) as id_negocio_loja
+        cast(businessentityid as int) as id_negocio
         , cast(name as string) as nome_loja
         , cast(salespersonid as int) as id_pessoa
         , cast(demographics as string) as demografia

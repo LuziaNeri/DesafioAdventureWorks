@@ -2,9 +2,9 @@ with source_salesorderheader as (
     select
         cast(salesorderid as int) as id_pedido
         , cast(revisionnumber as int) as numero_revisao
-        , cast(orderdate as date) as data_pedido
-        , cast(duedate as date) as data_vencimneto
-        , cast(shipdate as date) as data_envio
+        , cast(orderdate as datetime) as data_pedido
+        , cast(duedate as datetime) as data_vencimento
+        , cast(shipdate as datetime) as data_envio
         , cast(status as int) as status
         , cast(onlineorderflag as string) as onlineorderflag
         , cast(purchaseordernumber as string) as numero_ordem_pedido
