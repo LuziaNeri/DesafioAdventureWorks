@@ -136,3 +136,31 @@ sources:
             tests:
               - unique
               - not_null
+
+      - name: productcategory
+        description: Tabela com os dados das categorias de produtos.
+        columns:
+          - name: productcategoryid
+            descrition: Chave primária para registros ProductCategory.
+            tests:
+              - unique
+              - not_null
+          - name: name
+            descrition: Descrição da categoria.
+            tests:
+
+      - name: productsubcategory
+        description: Tabela com os dados das categorias de produtos.
+        columns:
+          - name: productsubcategoryid
+            descrition: Chave primária para registros ProductSubCategory.
+            tests:
+              - unique
+              - not_null
+          - name: productscategoryid
+            descrition: Chave primária para registros ProductCategory.
+            tests:
+              - unique
+              - not_null
+          - name: name
+            descrition: Descrição da subcategoria.

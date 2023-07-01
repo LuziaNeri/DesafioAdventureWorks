@@ -1,0 +1,74 @@
+version: 2
+
+models:
+  - name: stg_salesorderheader
+    columns:
+      - name: id_pedido
+        description: Chave primária do pedido.
+        
+      - name: numero_revisao
+        description: Número incremental para rastrear alterações no pedido de vendas ao longo do tempo.
+      
+      - name: data_pedido
+        description: Datas em que o pedido de venda foi criado.
+    
+      - name: data_vencimento	
+        description: Data em que o pedido é devido ao cliente.
+      
+      - name: data_envio
+        description: Data em que o pedido foi enviado ao cliente.
+      
+      - name: status
+        description: Status atual do pedido. 1 = Em processo; 2 = Aprovado; 3 = Em espera; 4 = Rejeitado; 5 = Enviado; 6 = Cancelado.
+    
+      - name: onlineorderflag	
+        description: Meio de execução do pedido. (0 = Pedido feito pelo vendedor. 1 = Pedido feito online pelo cliente)
+    
+      - name: numero_ordem_compra
+        description:  Referência do número da ordem de compra do cliente.
+    
+      - name: numero_conta
+        description:  Referência de número de contabilidade financeira.
+    
+      - name: id_cliente
+        description: Número de identificação do cliente. Chave estrangeira para Customer.id_negocio.
+    
+      - name: id_pessoa
+        description: Vendedor que criou o pedido de venda. 
+    
+      - name: id_territorio
+        description: Território em que a venda foi feita.
+    
+      - name: id_endereco_cobranca		
+        description: Id endereço de cobrança.
+    
+      - name: id_endereco_envio
+        description: Id endereço de envio. 
+    
+      - name: id_metodo_envio
+        description: Método de envio.
+
+      - name: id_cartao_credito
+        description: Número de identificação do cartão de crédito
+    
+      - name: codigo_aprovacao
+        description: Código de aprovação fornecido pela administradora do cartão de crédito.
+      
+      - name: id_taxa_cambio
+        description: Taxa de câmbio utilizada. Chave estrangeira para CurrencyRateID int CurrencyRate.CurrencyRateID.
+      
+      - name: subtotal
+        description: Subtotal de vendas.
+      
+      - name: imposto	
+        description: Valor do imposto.
+    
+      - name: frete
+        description: Frete.
+    
+      - name: total_devido
+        description: Total devido pelo cliente. Calculado como Subtotal + ImpostoAmt + Frete.
+    
+      - name: comentario
+        description: Comentários do representante de vendas.
+

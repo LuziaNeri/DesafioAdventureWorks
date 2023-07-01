@@ -1,12 +1,12 @@
-with stg_salesorderheader as (
-    select 
-        distinct(id_endereco_envio)
-    from {{ref('stg_salesorderheader')}}
-)
-
-, stg_address as (
-    select *
+with 
+    stg_address as (
+        select *
     from {{ref('stg_address')}}
+    )
+
+, stg_countryregion as (
+    select *
+    from {{ref('stg_countryregion')}}
 )
 
 , stg_stateprovince as (
@@ -14,22 +14,25 @@ with stg_salesorderheader as (
     from {{ref('stg_stateprovince')}}
 )
 
-, int_countryregion__salesterritory as (
-    select *
-    from {{ref('int_countryregion__salesterritory')}}
+, join_locations as (
+    select
+        stg_address.id_endereco
+        , stg_stateprovince.id_estado
+        , stg_stateprovince.id_territorio
+        , stg_address.nome_cidade
+        , stg_stateprovince.nome_estado
+        , stg_countryregion.codigo_pais
+        , stg_countryregion.nome_pais
+    from stg_stateprovince   
+    left join stg_countryregion on stg_stateprovince.codigo_pais  = stg_countryregion.codigo_pais
+    left join stg_address on stg_stateprovince.id_estado = stg_address.id_estado
 )
 
 , transformacao as (
     select
-        row_number() over (order by stg_salesorderheader.id_endereco_envio) as shiptoaddress_sk -- auto-incremental surrogate key
-        , stg_salesorderheader.id_endereco_envio
-        , stg_address.cidade
-        , stg_stateprovince.nome_estado
-        , int_countryregion__salesterritory.nome_pais
-    from stg_salesorderheader
-    left join stg_address on stg_salesorderheader.id_endereco_envio = stg_adress.id_endereco
-    left join stg_stateprovince on stg_address.id_endereco = stg_stateprovince.id_estado_provincia
-    left join int_countryregion__salesterritory on stg_stateprovince.codigo_pais = int_countryregion__salesterritory.codigo_pais 
+        row_number() over (order by id_estado) as sk_locations -- auto-incremental surrogate key
+        , *
+        from join_locations
 )
 
 select *

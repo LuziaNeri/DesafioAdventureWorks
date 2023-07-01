@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_customer
+    columns:
+      - name: id_cliente
+        description: Id original do cliente.
+        
+      - name: id_pessoa
+        description: Id original da pessoa.
+    
+      - name: id_loja
+        description: Id original da loja.
+    
+      - name: id_territorio
+        description: Id original do território.
+
+

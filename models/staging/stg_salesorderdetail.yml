@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: stg_salesorderdetail
+    columns:
+      - name: id_pedido
+        description: Id original produto. (Chave primária para registros dos pedidos.)
+        
+      - name: id_pedido_item
+        description: Chave primária id_pedido_item. Um número único incremental por produto vendido.
+      
+      - name: numero_rastreamento
+        description: Número de rastreamento da remessa fornecido pelo remetente.
+    
+      - name: quantidade
+        description: Quantidade pedida por produto.
+      
+      - name: id_produto
+        description: Produto vendido ao cliente. Chave estrangeira para Product.
+      
+      - name: oferta_especial
+        description: Código promocional. Chave estrangeira para SpecialOffer.SpecialOfferID.
+    
+      - name: preco_unidade
+        description: Preço de venda de um único produto.
+    
+      - name: desconto
+        description: Valor do desconto.
+    
+      - name: rowguid
+        description: Identifica exclusivamente o registro.
+    
+      - name: data_modificada
+        description: Data e hora em que o registro foi atualizado pela última vez.

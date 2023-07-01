@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: stg_countryregion
+    columns:
+      - name: codigo_pais
+        description:  Código do país.
+        
+      - name: nome_pais
+        description: Nome do país.

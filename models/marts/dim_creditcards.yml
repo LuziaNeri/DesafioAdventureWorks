@@ -6,7 +6,7 @@ models:
       - name: creditcard_sk
         description: Chave substituta do id_cartao_credito
         tests:
-          - not_null   
+          - unique   
       - name: id_cartao_credito
         description: Chave original do cartão de crédito
         tests:
