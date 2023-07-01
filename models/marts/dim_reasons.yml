@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_reasons
+    columns:
+      - name: id_pedido
+        description: Chave natural da da venda.
+        tests:
+          - unique
+          - not_null
+
+      - name: motivo_aggregated
+        description: razões para o id_pedido. Quando há mais de um motivo por id.pedido, os motivos/razões são agregados em uma linha 
+        tests:
+          - not_null
+
+

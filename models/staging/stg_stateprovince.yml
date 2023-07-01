@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_stateprovince
+    columns:
+      - name: id_estado
+        description: Chave primária para registros StateProvince.
+        
+      - name: codigo_estado
+        description: Código de estado ou província padrão ISO.
+
+      - name: codigo_pais
+        description: Código de país ou região padrão ISO.
+
+      - name: is_only_state_province
+        description: Descirção se o estado existe (0 = StateProvinceCode existe. 1 = StateProvinceCode indisponível, usando CountryRegionCode).
+
+      - name: nome_estado
+        description: Descrição/nome do estado ou província.
+
+      - name: id_territorio
+        description: ID do território em que o estado ou província está localizado. 
+ 

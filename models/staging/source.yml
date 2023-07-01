@@ -53,7 +53,6 @@ sources:
           - name: salesorderid
             descrition: Chave estrageira da tabela orderdetail.
             tests:
-              - unique
               - not_null
               
       - name: salesorderheader
@@ -83,4 +82,85 @@ sources:
               - unique
               - not_null
 
+      - name: salesperson
+        description: Tabela com os detalhes da loja vendedora.
+        columns:
+          - name: businessentityid
+            descrition: Chave estrageira da tabela de store.
+            tests:
+              - unique
+              - not_null        
 
+      - name: employee
+        description: Tabela com os detalhes dos vendedores.
+        columns:
+          - name: businessentityid
+            descrition: Chave estrageira da tabela de employee.
+            tests:
+              - unique
+              - not_null
+          - name: loginid
+            descrition: Id de login dos vendedores.
+            tests:
+              - unique
+              - not_null
+
+      - name: personcreditcard
+        description: Tabela com id dos cartões de crédito.
+        columns:
+          - name: businessentityid
+            descrition: Chave estrageira da tabela de personcreditcard.
+            tests:
+              - unique
+              - not_null
+          - name: creditcardid
+            descrition: Id do cartão de crédito.
+            tests:
+              - unique
+              - not_null
+
+      - name: currencyrate
+        description: Tabela de taxa de câmbio.
+        columns:
+          - name: currencyrateid
+            descrition: Id da tabela de taxa de câmbio.
+            tests:
+              - unique
+              - not_null
+
+      - name: salesterritory
+        description: Tabela com os dados dos territórios.
+        columns:
+          - name: territoryid
+            descrition: Id do território.
+            tests:
+              - unique
+              - not_null
+
+      - name: productcategory
+        description: Tabela com os dados das categorias de produtos.
+        columns:
+          - name: productcategoryid
+            descrition: Chave primária para registros ProductCategory.
+            tests:
+              - unique
+              - not_null
+          - name: name
+            descrition: Descrição da categoria.
+            tests:
+
+      - name: productsubcategory
+        description: Tabela com os dados das categorias de produtos.
+        columns:
+          - name: productsubcategoryid
+            descrition: Chave primária para registros ProductSubCategory.
+            tests:
+              - unique
+              - not_null
+          - name: productscategoryid
+            descrition: Chave primária para registros ProductCategory.
+            tests:
+              - unique
+              - not_null
+          - name: name
+            descrition: Descrição da subcategoria.

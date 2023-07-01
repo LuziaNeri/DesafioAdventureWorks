@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: stg_productsubcategory
+    columns:
+      - name: productsubcategoryid
+        descrition: Chave primária para registros ProductSubCategory.
+      
+      - name: productscategoryid
+        descrition: Chave primária para registros ProductCategory.
+      
+      - name: name
+        descrition: Descrição da categoria.
+

@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: dim_locations
+    columns:
+      - name: id_endereco_envio_sk
+        description: A chave substituta do endereço de envio.
+        tests:
+          - unique
+
+      - name: id_endereco_envio
+        description: Id do endereço de envio
+        tests:
+          - unique
+
+      - name: cidade
+        description: Nome da cidade
+
+      - name: Nome Estado
+        description: O nome do Estado
+
+      - name: nome_pais
+        description: O nome do país.
+
+      - name: Continente
+        description: O nome do continente.

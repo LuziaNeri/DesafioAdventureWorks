@@ -1,0 +1,155 @@
+version: 2
+
+models:
+  - name: fct_sales
+    columns:
+      - name: sk_venda
+        description: Chave substituta de vendas
+        tests:
+          - not_null
+      
+      - name: id_pedido
+        description: Id original do pedido 
+        tests:
+          - not_null
+      
+      - name: id_pedido_item
+        description: Id orginal do pedido item.
+        tests:
+          - not_null
+      
+      - name: id_produto
+        description: Id original do produto.
+        tests:
+          - not_null
+      
+      - name: fk_produto
+        description: Chave estrangeira do produto.
+        tests:
+          - not_null       
+
+      - name: sk_cliente
+        description: Chave estrangeira do cliente.
+        tests:
+          - not_null   
+   
+      - name: id_cartao_credito
+        description: Id original do cartão de crédito.
+        tests:
+          - not_null
+
+      - name: creditcard_sk
+        description: Chave estrangeira do cartão de crédito.
+        tests:
+          - not_null
+
+      - name: sk_endereco
+        description: Chave estrangeira do endereço de envio.
+
+      - name: id_endereco_envio
+        description: Id original do endereço de envio dos pedidos.
+        tests:
+          - not_null
+
+      - name: id_territorio
+        description: Id original do território.
+        tests:
+          - not_null
+
+      - name: id_endereco_cobranca
+        description: Id original do endereco de cobranca.
+        tests:
+          - not_null
+    
+      - name: id_metodo_envio
+        description: Id original do metodo de envio.
+
+      - name: id_taxa_cambio
+        description: Código de aprovação do pedido.
+   
+      - name: data_pedido 
+        description: Data do pedido.
+
+      - name: data_vencimento
+        description: Data final para envio do pedido.
+
+      - name: data_envio
+        description: Data de envio do pedido.
+
+      - name: nome_pessoa
+        description: nome do cliente.
+
+      - name: nome_cidade
+        description: Cidade de envio dos pedidos.
+
+      - name: nome_estado
+        description: Estado de envio dos pedidos.
+
+      - name: nome_pais
+        description: País de envio dos pedidos.
+
+      - name: continente
+        description: Continente de envio dos pedidos.
+
+      - name: razao_aggregated 
+        description: Motivo/razão da compra.
+
+      - name: nome_produto
+        description: Nome do produto.
+
+      
+      - name: status
+        description: Status de envio do pedido.
+
+      - name: subtotal
+        description: Valor da compra sem impostos e frete.
+
+      - name: imposto frete
+        description: Valor de imposto do pedido.
+
+      - name: frete 
+        description: Valor do frete.
+
+      - name: total_devido
+        description: Valor total do pedido incluído frete e imposto.
+
+      - name: oferta_especial preco_unidade
+        description: Oferta no pedido.
+
+      - name: preco_unidade
+        description: Preço por unidade do produto.
+
+      - name: desconto
+        description: Preço por unidade do produto.
+
+      - name: is_teve_desconto
+        description: Houve desconto no produto?
+
+      - name:  total_bruto
+        description: Total do item sem desconto.
+
+      - name: total_liquido
+        description: Total do item com desconto.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

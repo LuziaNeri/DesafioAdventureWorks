@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: stg_salesorderheadersalesreason
+    columns:
+      - name: id_pedido
+        description: Id original produto. (Chave primária para registros do produto..)
+        
+      - name: id_razao_pedido
+        description: Nome do produto.

@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: stg_person
+    columns:
+      - name: id_negocio
+        description: Id original do negócio.
+        
+      - name: tipo_pessoa
+        description: Tipo principal de pessoa - SC = Contato da loja, IN = Individual (varejo) cliente, SP = vendedor, EM = funcionário (não vendedor), VC = fornecedor contato, GC = Contato geral.
+    
+      - name: estilo_nome
+        description: 0 = Os dados em FirstName e LastName são armazenados no estilo ocidental (primeiro nome, sobrenome) ordem. 1 = Ordem do estilo oriental (sobrenome, nome). Para o desafio foi mantido apenas o primeiro e o último nome.
+    
+      - name: titulo
+        description: Título de cortesia (Mr. ou Ms.)
+    
+      - name: nome_pessoa
+        description: Nome da pessoa.
+
+      - name: sufixo
+        description: Sufixo de sobrenome. Por exemplo, Sr. ou Jr.
+
+      - name: promocao_por_email
+        description: Se o cliente quer ou não receber e-mail promocional. 0 = O contato não deseja receber promoções por e-mail, 1 = O contato deseja deseja receber promoções por e-mail da AdventureWorks, 2 = Contato deseja receber promoções por e-mail da AdventureWorks e parceiros selecionados.
+
+      - name: info_adicional
+        description: Informações de contato adicionais sobre a pessoa armazenadas no formato xml.
+
+
+
+
+    
+
+    
+
+
+

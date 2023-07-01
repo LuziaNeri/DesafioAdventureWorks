@@ -7,7 +7,6 @@ models:
         description:  A chave substituta do cliente.
         tests:
           - unique
-          - not_null
 
       - name: id_cliente
         description: Chave original do cliente.

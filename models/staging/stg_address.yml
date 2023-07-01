@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_address
+    columns:
+      - name: id_endereco
+        description:  Chave original do endereço.
+        
+      - name: endereco_1
+        description: Primeiro complemento do endereço.
+          
+      - name: endereco_2
+        description: Segundo complemento do endereço.
+
+      - name: cidade
+        description: Cidade do endereço.
+
+      - name: nome_estado
+        description: Estado do endereço. 
+
+      - name: cep
+        description: CEP do endereço..
+
+      - name: localizacao_espacial
+        description: Localização do endereço..

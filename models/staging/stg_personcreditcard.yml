@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stg_personcreditcard
+    columns:
+      - name: id_negocio
+        description: Id original do negócio. (Número de identificação da entidade comercial.)
+        
+      - name: id_cartao_credito
+        description: Chave primária para registros CreditCard.
+ 

@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: stg_salesreason
+    columns:
+      - name: id_estadoid_motivo_pedido
+        description: Chave primária para registros SalesReason.
+        
+      - name: motivo
+        description: Descrição do motivo da venda.
+
+      - name: tipo_motivo_pedido
+        description: Categoria a que pertence o motivo da venda.

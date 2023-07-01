@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_creditcard
+    columns:
+      - name: id_cartao_credito
+        description: Id original dos cartões de crédito.
+        
+      - name: tipo_cartao
+        description: Tipo de cartão.
+    
+      - name: numero_cartao
+        description: Número do cartão de crédito.
+    
+      - name: mes_expriacao
+        description: Mês de expiração do cartão de crédito.
+    
+      - name: ano_expiracao
+        description: Ano de expiração do cartão de crédito.
+
