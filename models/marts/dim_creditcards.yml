@@ -3,15 +3,21 @@ version: 2
 models:
   - name: dim_creditcards
     columns:
-      - name: creditcard_sk
+      - name: sk_cartao_credito
         description: Chave substituta do id_cartao_credito
         tests:
-          - unique   
+          - unique
+          - not_null
+      - name: id_negocio
+        description: Número de identificação da entidade comercial.
+        tests:
+          - unique 
+          - not_null 
       - name: id_cartao_credito
         description: Chave original do cartão de crédito
         tests:
           - unique 
-          - not_null 
+          - not_null
       - name: tipo_cartao
         description: Nome do cartão de crédito
         tests:

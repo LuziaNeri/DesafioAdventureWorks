@@ -3,7 +3,7 @@ version: 2
 models:
   - name: dim_products
     columns:
-      - name: sk_product 
+      - name: sk_produto 
         description: A chave substituta dos produtos.
         tests:
           - not_null
@@ -17,20 +17,22 @@ models:
         description: Chave primária para registros ProductCategory.
         tests:
           - not_null
-          - unique
+          
       - name: id_sub_categoria_produto 
         description: Chave primária para registros ProductSubCategory.
         tests:
-          - not_null
-          - unique
+          - not_null          
+      
       - name: nome_produto
         description: Nome dos produtos.
         tests:
           - not_null
+
       - name: nome_categoria_produto
         description: Descrição da categoria.
         tests:
           - not_null
+          
       - name: name_subcategoria_produto
         description: Descrição da subcategoria.
         tests:

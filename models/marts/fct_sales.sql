@@ -31,20 +31,20 @@ with
     
     , joined as (
         select
-            reasons.id_pedido
+            int_header__detail.id_pedido
             , int_header__detail.id_pedido_item
             , products.id_produto
             , products.sk_produto
             , products.id_categoria_produto
             , products.id_sub_categoria_produto   
             , customers.sk_cliente
-            , creditcards.id_cartao_credito
-            , creditcards.sk_cartao_credito
+            , coalesce(creditcards.id_cartao_credito, 0) as id_cartao_credito -- substitui os valores null por 0 nos casos em que a coluna não tenha o valor.
+            , coalesce(creditcards.sk_cartao_credito, 0) as sk_cartao_credito -- substitui os valores null por 0 nos casos em que a coluna não tenha o valor.
+            , creditcards.id_negocio
             , locations.sk_locations
             , int_header__detail.id_territorio
             , int_header__detail.id_endereco_cobranca
-            , int_header__detail.id_metodo_envio
-            , int_header__detail.id_taxa_cambio
+            , int_header__detail.id_metodo_envio 
             , int_header__detail.data_pedido
             , int_header__detail.data_vencimento
             , int_header__detail.data_envio    
@@ -53,11 +53,11 @@ with
             , locations.nome_cidade
             , locations.nome_estado
             , locations.nome_pais        
-            , reasons.motivo_aggregated   
+            , coalesce (reasons.motivo_aggregated, 'Não informado') as motivo_venda
             , products.nome_produto
             , products.nome_categoria_produto			
             , products.name_subcategoria_produto
-            , int_header__detail.status --Status atual do pedido. 1 = Em processo; 2 = Aprovado; 3 = Em espera; 4 = Rejeitado; 5 = Enviado; 6 = Cancelado
+            , int_header__detail.status_pedido --Status atual do pedido. 1 = Em processo; 2 = Aprovado; 3 = Em espera; 4 = Rejeitado; 5 = Enviado; 6 = Cancelado
             , int_header__detail.subtotal
             , int_header__detail.imposto
             , int_header__detail.frete
@@ -83,7 +83,7 @@ with
                 , (preco_unidade * quantidade) as total_bruto
                 , (preco_unidade * quantidade * (1- desconto)) as total_liquido
                 , (imposto/qtde_imposto_por_id) as imposto_unico
-                , (frete/qtde_frete_por_id) as frete_unico            
+                , (frete/qtde_frete_por_id) as frete_unico          
             from joined
     )
 

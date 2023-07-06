@@ -154,13 +154,14 @@ sources:
         columns:
           - name: productsubcategoryid
             descrition: Chave primária para registros ProductSubCategory.
-            tests:
+            tests:              
               - unique
               - not_null
-          - name: productscategoryid
+          - name: productcategoryid
             descrition: Chave primária para registros ProductCategory.
             tests:
-              - unique
               - not_null
           - name: name
             descrition: Descrição da subcategoria.
+            tests:
+              - not_null
