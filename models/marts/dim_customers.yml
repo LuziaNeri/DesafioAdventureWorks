@@ -3,9 +3,16 @@ version: 2
 models:
   - name: dim_customers
     columns:
-      - name: customer_sk
+      - name: sk_cliente
         description:  A chave substituta do cliente.
         tests:
+          - not_null
+          - unique
+
+      - name: id_negocio
+        description: Chave original do negócio.
+        tests:
+          - not_null
           - unique
 
       - name: id_cliente
@@ -13,17 +20,14 @@ models:
         tests:
           - not_null
           - unique
-          
+        
+      - name: id_territorio
+        description: Id do território
+        tests:
+          - not_null
+                  
+
       - name: nome_pessoa
-        description: O nome do cliente. Adotado como nome_cliente quando o nome da pessoa não é nulo.
-
-      - name: id_negocio_loja
-        description: Chave original de store.
-
-      - name: nome_loja
-        description: O nome da loja. Adotado como nome_cliente quando o nome da pessoa é nulo. 
-
-      - name: nome_cliente
         description: Nome do cliente.
         tests:
           - not_null

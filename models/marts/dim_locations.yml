@@ -3,24 +3,39 @@ version: 2
 models:
   - name: dim_locations
     columns:
-      - name: id_endereco_envio_sk
-        description: A chave substituta do endereço de envio.
+      - name: sk_locations
+        description: A chave substituta da tabela.
         tests:
+          - not_null
           - unique
 
-      - name: id_endereco_envio
-        description: Id do endereço de envio
+      - name: id_estado
+        description: Id do endereço do estado.
         tests:
-          - unique
+          - not_null          
 
-      - name: cidade
-        description: Nome da cidade
+      - name: id_territorio
+        description: Id do endereço do território.
+        tests:
+          - not_null
+          
 
-      - name: Nome Estado
-        description: O nome do Estado
+      - name: nome_cidade
+        description: O nome da cidade.
+        tests:
+          - not_null
+      
+      - name: nome_estado
+        description: O nome do estado.
+        tests:
+          - not_null
 
+      - name: codigo_pais
+        description: O código do país.
+        tests:
+          - not_null
+      
       - name: nome_pais
-        description: O nome do país.
-
-      - name: Continente
-        description: O nome do continente.
+        description: O código do país.
+        tests:
+          - not_null

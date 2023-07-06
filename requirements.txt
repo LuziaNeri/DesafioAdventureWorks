@@ -1,0 +1,4 @@
+Python==3.8.10
+dbt-core==1.4.6
+dbt-bigquery==1.4.3
+dbt-labs/dbt_utils==0.8.0

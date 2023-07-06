@@ -23,7 +23,7 @@ models:
         tests:
           - not_null
       
-      - name: fk_produto
+      - name: sk_produto
         description: Chave estrangeira do produto.
         tests:
           - not_null       
@@ -38,18 +38,13 @@ models:
         tests:
           - not_null
 
-      - name: creditcard_sk
+      - name: sk_cartao_credito
         description: Chave estrangeira do cartão de crédito.
         tests:
           - not_null
 
       - name: sk_endereco
         description: Chave estrangeira do endereço de envio.
-
-      - name: id_endereco_envio
-        description: Id original do endereço de envio dos pedidos.
-        tests:
-          - not_null
 
       - name: id_territorio
         description: Id original do território.
@@ -93,12 +88,14 @@ models:
 
       - name: razao_aggregated 
         description: Motivo/razão da compra.
+        test:
+          - not_null
 
       - name: nome_produto
         description: Nome do produto.
 
       
-      - name: status
+      - name: status_pedido
         description: Status de envio do pedido.
 
       - name: subtotal

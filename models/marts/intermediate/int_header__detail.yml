@@ -1,0 +1,106 @@
+version: 2
+
+models:
+  - name: int_header__detail
+    columns:
+      - name: id_pedido
+        description: Chave primária.
+        tests:
+          - not_null
+          
+
+      - name: id_pedido_item
+        description: Chave primária. Um número único incremental por produto vendido.
+        tests:
+          - not_null
+          - unique
+
+      - name: id_produto
+        description: Produto vendido ao cliente. Chave estrangeira para Product.ProductID.
+        tests:
+          - not_null          
+        
+      - name: id_cliente
+        description: Número de identificação do cliente.
+        tests: 
+          - not_null            
+      
+      - name: id_cartao_credito
+        description: Número de identificação do cartão de crédito.
+        tests:
+          - not_null
+
+      - name: id_territorio
+        description: Território em que a venda foi feita.
+        tests: 
+          - not_null
+      
+      - name: id_endereco_cobranca
+        description: Endereço de cobrança do cliente.
+        tests:
+          - not_null
+      
+      - name: id_endereco_envio
+        description: Endereço de entrega do cliente.
+        tests:
+          - not_null
+      
+      - name: id_metodo_envio
+        description: Método de envio.
+        tests: 
+          - not_null
+           
+      - name: data_pedido
+        description: data da compra.
+        tests:
+          - not_null
+      
+      - name: onlineorderflag
+        description: Meio de compra online, 0 = Pedido feito pelo vendedor. 1 = Pedido feito online pelo cliente.
+        tests:
+          - not_null
+      
+      - name: numero_conta
+        description: Referência de número de contabilidade financeira.
+        tests:
+          - not_null
+      
+      - name: subtotal
+        description: Subtotal de vendas. 
+        tests:
+          - not_null
+      
+      - name: imposto
+        description: Imposto devido.
+        tests:
+          - not_null
+      
+      - name: frete
+        description: Taxa de frete.
+        tests:
+          - not_null
+      
+      - name: total_devido
+        description: Total devido pelo cliente.
+        tests:
+          - not_null
+      
+      - name: quantidade
+        description: Quantidade encomendada por produto.
+        tests:
+          - not_null
+      
+      - name: oferta_especial
+        description: Código promocional. 
+        tests:
+          - not_null
+
+      - name: preco_unidade
+        description: Preço de venda de um único produto.
+        tests:
+          - not_null
+
+      - name: desconto
+        description: Valor do desconto.
+        tests:
+          - not_null        
