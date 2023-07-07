@@ -48,8 +48,8 @@ with
             , int_header__detail.data_pedido
             , int_header__detail.data_vencimento
             , int_header__detail.data_envio    
-            , customers.nome_pessoa   
-            , creditcards.tipo_cartao      
+            , customers.nome_pessoa             
+            , coalesce(creditcards.tipo_cartao, 'Não informado') as tipo_cartao -- substitui os valores null por 0 nos casos em que a coluna não tenha o valor.    
             , locations.nome_cidade
             , locations.nome_estado
             , locations.nome_pais        
